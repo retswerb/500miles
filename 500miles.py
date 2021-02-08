@@ -42,4 +42,4 @@ elif milesRun < targetMiles:
     print("Time to get running! You're", milesBehind, "miles behind today's target,", targetMiles, "miles.")
 elif milesRun > targetMiles:
     milesAhead = round((milesRun - targetMiles), 2)
-    print("Great job! You're %s miles ahead of today's target, %s miles." (milesAhead, targetMiles)) #this is throwing an error for "'str' object is not callable"
+    print("Great job! You're %s miles ahead of today's target, %s miles." % (milesAhead, targetMiles))
