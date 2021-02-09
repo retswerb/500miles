@@ -4,6 +4,9 @@ from datetime import date
 #get current date (curDate)
 curDate = date.today()
 
+#set target miles
+annualMiles = 500
+
 #count how many days since beginning of year (daysElapsed)
 dateNewYear = date(2020, 12, 31)
 testDate = date(2021, 12, 31) #use for testing if needed
@@ -20,9 +23,16 @@ print(daysGone, "days have gone by in 2021.")
 #handle non-numbers gracefully
 while True:
     try:
-        milesRun = input('How many miles have you run this year? ')
-        milesRun = float(milesRun)
-        break
+        milesRun = input("How many miles have you run this year? (Enter 'Miles' to change mileage goal from 500 miles) ")
+        #change goal if needed
+        if milesRun == "Miles" or milesRun == "miles":
+            annualMiles = input("Enter your annual mileage goal: ")
+            annualMiles = float(annualMiles)
+            milesRun = 0
+        #back to accepting mileage input
+        else:
+            milesRun = float(milesRun)
+            break
     except ValueError:
         print("Please enter the number of miles you've run so far.")
         continue
@@ -30,7 +40,7 @@ while True:
 milesRun = round(milesRun, 2)
 
 #calculate target (targetMiles = yearPercent * 500)
-targetMiles = yearPercent*500
+targetMiles = yearPercent*annualMiles
 targetMiles = round(targetMiles, 2)
 
 #compare milesRun to targetMiles
