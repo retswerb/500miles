@@ -23,7 +23,7 @@ print(daysGone, "days have gone by in 2021.")
 #handle non-numbers gracefully
 while True:
     try:
-        milesRun = input("How many miles have you run this year? (Enter 'Miles' to change mileage goal from 500 miles) ")
+        milesRun = input("How many miles have you run this year? (Enter 'Miles' to change mileage goal from " + str(annualMiles) + " miles) ")
         #change goal if needed
         if milesRun == "Miles" or milesRun == "miles":
             annualMiles = input("Enter your annual mileage goal: ")
