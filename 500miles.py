@@ -1,7 +1,7 @@
 #import
 from datetime import date
 
-#get current date (curDate)
+#get current date
 curDate = date.today()
 
 #set target miles
